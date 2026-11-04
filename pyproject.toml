@@ -1,0 +1,38 @@
+[project]
+name = "multimodal-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "HyeonsuRyu", email = "hsoo112149@gmailcom" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "chromadb>=1.5.9",
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.5",
+    "langchain>=1.0",
+    "langchain-chroma>=1.1.0",
+    "langchain-classic>=1.0",
+    "langchain-community>=0.4.2",
+    "langchain-experimental>=0.4.2",
+    "langchain-ollama>=1.1.0",
+    "langchain-openai>=1.7.3",
+    "lxml>=6.1.3",
+    "matplotlib>=3.11.2",
+    "pillow>=13.0.0",
+    "pydantic>=2.14.2",
+    "python-dotenv>=1.2.4",
+    "tiktoken>=0.14.0",
+    "unstructured[all-docs]>=0.27.36",
+]
+
+[project.scripts]
+multimodal-rag = "multimodal_rag:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false
