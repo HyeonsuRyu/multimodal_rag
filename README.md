@@ -1,5 +1,7 @@
+```
 git clone <저장소 주소>
 cd multimodal-rag
+```
 
 # uv를 사용하는 경우
 ## 가상환경 생성 및 의존성 설치
