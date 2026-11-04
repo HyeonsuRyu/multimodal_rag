@@ -16,3 +16,4 @@ tiktoken
 python-dotenv
 ipykernel
 jupyterlab
+unstructured-inference>=1.6.12,<2.0.0
