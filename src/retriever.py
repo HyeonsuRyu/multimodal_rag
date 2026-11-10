@@ -53,16 +53,16 @@ def img_prompt_func(data_dict):
             "image_url": {"url": f"data:image/jpeg;base64,{image}"}
         })
 
-        formatted_texts = "\n".join(data_dict["context"]["texts"])
-        messages.append({
-            "type": "text",
-            "text": ("자료를 근거로 질문에 한국어로 답하세요\n"
-                    "그래프로 나타난 수치는 이미지를 분석하여 대략적인 값을 요약에 포함하세요\n"
-                    "자료에 없는 내용은 모른다고 답하세요.\n\n"
-                    f"질문: {data_dict['question']}\n\n"
-                    f"참고 텍스트 :\n {formatted_texts}"),
-        })
-        return [HumanMessage(content=messages)]
+    formatted_texts = "\n".join(data_dict["context"]["texts"])
+    messages.append({
+        "type": "text",
+        "text": ("자료를 근거로 질문에 한국어로 답하세요\n"
+                "그래프로 나타난 수치는 이미지를 분석하여 대략적인 값을 요약에 포함하세요\n"
+                "자료에 없는 내용은 모른다고 답하세요.\n\n"
+                f"질문: {data_dict['question']}\n\n"
+                f"참고 텍스트 :\n {formatted_texts}"),
+    })
+    return [HumanMessage(content=messages)]
 
 if __name__ == "__main__":
     # 프로젝트 경로, 환경 변수 로드
