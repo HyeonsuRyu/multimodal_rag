@@ -179,7 +179,7 @@ if __name__ == "__main__":
         print(summary)
         print()
 
-
+    # 이미지 요약
     image_files = sorted(
         f for f in figures_dir.iterdir() if f.suffix.lower() in (".jpg", "jpeg", ".png")
     )
