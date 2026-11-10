@@ -162,7 +162,7 @@ flowchart TD
 - 본문 텍스트에 서술된 내용을 묻는 Q3은 Before와 After 모두 "고소득 대기업 종사 가구"라는 같은 핵심 내용으로 답했습니다.
 - After의 수치는 LLM이 그래프 이미지를 보고 읽은 **근사값**이므로 원문과 대조가 필요합니다.
 
-[before-after](docs/before_after.png)
+![before-after](docs/before_after.png)
 
 ### 2-6. 질의응답 결과
 
