@@ -21,7 +21,7 @@ except:
     print("InMemoryStore 클래스가 필요합니다.")
 
 # 요약과 원본 연결하여 저장
-def add_documents(retriever, doc_summaries, doc_contents):
+def add_documents(retriever, doc_summaries, doc_contents, id_key):
     doc_ids = [str(uuid.uuid4()) for _ in doc_contents]
     summary_docs = [Document(page_content=s, metadata={id_key:doc_ids[i]})
                     for i, s in enumerate(doc_summaries)]
@@ -110,11 +110,11 @@ if __name__ == "__main__":
     )
 
     if text_summaries:
-        add_documents(retriever, text_summaries, texts_2k_token)
+        add_documents(retriever, text_summaries, texts_2k_token, id_key)
     if table_summaries:
-        add_documents(retriever, table_summaries, tables)
+        add_documents(retriever, table_summaries, tables, id_key)
     if image_summaries:
-        add_documents(retriever, image_summaries, img_base64_list)
+        add_documents(retriever, image_summaries, img_base64_list, id_key)
 
     print("색인 완료")
     print("  벡터 DB에 저장된 요약 수:", len(vectorstore.get()["ids"]))
@@ -190,4 +190,5 @@ if __name__ == "__main__":
     after = chain.invoke(query)
     print("======== after ========")
     print(after)
+
     print("이 출력 전체를 캡처해 README.md에 넣으세요.")
